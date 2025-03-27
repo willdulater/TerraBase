@@ -1,0 +1,281 @@
+/* Ensure the dropdown is separate and doesn't expand the modal */
+.dropdown-modal {
+  position: absolute;
+  top: 100%; /* Position the dropdown directly below the input */
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure dropdown appears above other elements */
+}
+
+/* Ensure the dropdown aligns properly */
+.chip-input-container {
+  position: relative; /* Relative for dropdown alignment */
+}
+
+/* Maintain existing styles */
+.dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-item:hover {
+  background: #004d7a;
+  color: white;
+}
+
+
+/* General Styling */
+.container {
+  margin: 20px 0;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.radio-label {
+  position: relative;
+  padding-left: 35px;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.radio-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-radio {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 18px;
+  width: 18px;
+  background-color: #f9f9f9;
+  border: 2px solid #0f4d92;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.radio-label input:checked ~ .custom-radio {
+  background-color: #0f4d92;
+  border-color: #0f4d92;
+}
+
+.custom-radio::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radio-label input:checked ~ .custom-radio::after {
+  display: block;
+}
+
+.radio-label .custom-radio::after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+/* Chips Styling */
+.chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+  gap: 15px;
+  
+  
+}
+
+.chip {
+  background: #e0f7fa;
+  color: #006064;
+  padding: 5px 10px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  cursor: default;
+  margin-right: 10px; /* Horizontal space between chips */
+  margin-bottom: 10px; /* Vertical space between chips */
+}
+
+.chip-remove {
+  background: #006064;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.chip-remove:hover {
+  background: #004d7a;
+}
+
+/* Input Styling */
+input[type="text"] {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 1rem;
+}
+
+/* Dropdown Styling */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  animation: dropdownFadeIn 0.3s ease-in-out;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-item:hover {
+  background: #004d7a;
+  color: white;
+}
+
+/* Button Styling */
+.button {
+  background: #004d7a;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #003456;
+}

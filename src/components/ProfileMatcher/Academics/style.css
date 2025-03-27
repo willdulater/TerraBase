@@ -1,0 +1,51 @@
+/* Main Card Container */
+.academics-card {
+    background-color: #f7faff;
+    /* Light blue background */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 20px;
+    border: 1px solid #d3d3d3;
+    /* Internal spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    /* Center alignment */
+}
+
+/* Header Styling */
+.academics-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.academics-icon {
+    height: 40px;
+    width: auto;
+}
+
+/* Academic Details */
+.academics-details p {
+    margin: 8px 0;
+    /* Space between each row */
+    font-size: 16px;
+    /* Standard readable font size */
+    color: #2c3e50;
+    /* Darker text for readability */
+}
+
+.academics-details p strong {
+    color: #34495e;
+    /* Slightly darker for emphasis */
+}
+.academics-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+    /* Darker text for readability */
+}

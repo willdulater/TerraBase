@@ -1,0 +1,33 @@
+.login-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+.company-info-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: black;
+}
+
+.button-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.button-container button {
+	margin: 10px;
+	color: #7C55D6;
+}
+
+.logo {
+	height: 3rem;
+	margin: 1rem;
+}

@@ -1,0 +1,169 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    width: 620px;
+    max-width: 90%;
+    position: relative;
+    text-align: center;
+  
+    max-height: 90vh; /* Prevents the modal from being too tall */
+    overflow-y: auto; /* Enables scrolling if the content overflows */
+    margin: auto;
+  }
+  
+  
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .close-btn:hover {
+    color: #0073e6;
+  }
+  
+  /* Modal Header */
+  .modal-content h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Groups */
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  /* Labels (like activity name) */
+  .form-group label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+    
+    
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  
+  /* Input Fields */
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #ddd;
+    
+    
+  }
+  
+  /* Input Focus Effect */
+  .form-group input:focus {
+    
+    outline: none;
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle glow */
+    border: 1px solid #ddd;
+  }
+  
+  /* Action Buttons */
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 15px;
+  }
+  
+  /* Save Button */
+  .save-btn {
+    background: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  /* Save Button Hover */
+  .save-btn:hover {
+    background: #005bb5;
+    transform: scale(1.01);
+  }
+  
+  /* Cancel Button */
+  .cancel-btn {
+    background: #ddd;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  /* Cancel Button Hover */
+  .cancel-btn:hover {
+    background: #bbb;
+    transform: scale(1.05);
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 500px) {
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+  
+    .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+  
+    .save-btn, .cancel-btn {
+        width: 100%;
+    }
+  }
+  

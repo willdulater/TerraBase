@@ -1,0 +1,131 @@
+/* Add these styles in your CSS file */
+.toggle-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 9999px;
+	overflow: hidden;
+}
+
+.toggle-button button {
+	flex: 1;
+	padding: 0.5rem 1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.toggle-button button.active {
+	background-color: #0f4d92;
+	/* Blue */
+	color: white;
+}
+
+.toggle-button button.inactive {
+	background-color: transparent;
+	color: #6b7280;
+	/* Gray */
+}
+
+.react-quill-dark .ql-container {
+	background-color: #1e293b !important;
+	/* Dark mode editor background */
+	color: #f3f4f6 !important;
+	/* Light text */
+}
+
+/* Ensure the toolbar is sticky and styled */
+.quill-toolbar {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+/* Editor content must scroll separately from the toolbar */
+.editor-content {
+	overflow-y: auto;
+	height: calc(100% - 50px);
+	/* Adjust for the toolbar height */
+}
+
+.react-quill-dark .ql-toolbar {
+	background-color: #374151 !important;
+	/* Dark toolbar */
+	border-color: #4b5563 !important;
+	/* Toolbar border */
+}
+
+.react-quill-dark .ql-stroke {
+	stroke: #f3f4f6 !important;
+	/* Toolbar icons */
+}
+
+.react-quill-dark .ql-picker {
+	color: #f3f4f6 !important;
+	/* Toolbar dropdown text */
+}
+
+.react-quill-dark .ql-picker-options {
+	background-color: #374151 !important;
+	/* Dropdown background */
+	border-color: #4b5563 !important;
+	/* Dropdown border */
+}
+
+.react-quill-dark .ql-picker-item {
+	color: #f3f4f6 !important;
+	/* Dropdown text */
+}
+
+.ql-container {
+	border-left: 0 !important;
+	border-right: 0 !important;
+	border-bottom: 0 !important;
+	font-family: "Segoe UI", sans-serif !important;
+	font-style: normal !important;
+	color: black;
+}
+
+/* do a style for paragraphs within ql-container */
+.ql-container p {
+	font-size: 1rem; /* 16px */
+	line-height: 1.5rem; /* 24px */
+}
+
+.ql-container h1 {
+	font-size: 1.25rem; /* 20px */
+	line-height: 1.75rem; /* 28px */
+}
+
+.ql-container h2 {
+	font-size: 1.5rem; /* 24px */
+	line-height: 2rem; /* 32px */
+}
+
+.ql-toolbar {
+	border: 0 !important;
+	border-color: (#475467, 0.2);
+	margin-bottom: 0.5rem;
+	background-color: transparent !important;
+}
+
+.ql-container {
+	background-color: white;
+	/* box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); */
+	/* border-radius: 1rem; */
+	/* padding-top: 0.5rem; */
+	/* round corners */
+	border-radius: 0.5rem;
+	padding: 1rem;
+	/* font-family: Sohne !important; */
+}
+
+.ql-container p {
+	margin-bottom: 0.2rem;
+}
+
+.inserted-text {
+	background-color: #82ff8a;
+	transition: background-color 1s ease-out;
+}
