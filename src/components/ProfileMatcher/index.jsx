@@ -524,24 +524,24 @@ const ProfileMatcher = ({
 
         <div className="w-full border-t border-gray-100 pt-4 mb-4">
           <h3 className="text-base font-medium text-gray-700 mb-2">
-            Complete Your Profile
+            Complete Your Profile:
           </h3>
 
           <ul className="list-none p-0 text-sm leading-7 text-left">
             <li
               className={demographicsFilled ? "text-green-500" : "text-red-500"}
             >
-              {demographicsFilled ? "✅" : "❌"} Fill in Demographics
+              {demographicsFilled ? "✔️" : "❌"} Fill in Demographics
             </li>
             <li className={academicsFilled ? "text-green-500" : "text-red-500"}>
-              {academicsFilled ? "✅" : "❌"} Fill in Academics
+              {academicsFilled ? "✔️" : "❌"} Fill in Academics
             </li>
             <li
               className={
                 extracurricularsFilled ? "text-green-500" : "text-red-500"
               }
             >
-              {extracurricularsFilled ? "✅" : "❌"} Include at least 3
+              {extracurricularsFilled ? "✔️" : "❌"} Include at least 3
               Extracurriculars
             </li>
           </ul>

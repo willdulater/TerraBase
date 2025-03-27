@@ -1213,7 +1213,7 @@ const ProfileCompletionChecklist = ({
 
       <div className="w-full border-t border-gray-100 pt-4 mb-4">
         <h3 className="text-base font-medium text-gray-700 mb-2">
-          Complete Your Profile
+          Complete Your Profile:
         </h3>
 
         <ul
