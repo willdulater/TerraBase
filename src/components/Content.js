@@ -40,7 +40,7 @@ const Content = () => {
   // which mode a user is in
   const [selectedMode, setSelectedMode] = useState(() => {
     // Retrieve mode from localStorage or default to "profile"
-    return localStorage.getItem("selectedMode") || "profile";
+    return localStorage.getItem("selectedMode") || "imagematcher";
   });
 
 

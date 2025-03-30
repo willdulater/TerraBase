@@ -14,7 +14,7 @@ const ModeSelector = ({ selectedMode, setSelectedMode }) => {
           src="TerraFind.png"
           alt="Logo"
           className="h-8 cursor-pointer"
-          onClick={() => handleSelectedMode("profile")}
+          onClick={() => handleSelectedMode("imagematcher")}
         />
         
       </div>
