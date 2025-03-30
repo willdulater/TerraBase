@@ -1,32 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Left from "./Left";
-import Center from "./Center";
 import Spinner from "./Spinner";
 import Request from "./Request";
-import FreeWrite from "./FreeWrite";
-import Settings from "./Settings";
-import Resources from "./Resources";
-import LandingPage from "./LandingPage";
-import LandingPage2 from "./LandingPage2";
-import LandingPageMain from "./LandingPageMain";
-import Profile from "./Profile";
 import Cookies from "universal-cookie";
-import CTASubscribeModal from "./CTASubscribeModal";
 
-import Interview from "./Interview";
-
-import InterviewInputModal from "./Interview/InterviewInputModal";
 import ChatModal from "./Center/ChatModal";
 import { useAuth0 } from "@auth0/auth0-react";
 import * as Sentry from "@sentry/react";
 import studentData from "./studentData.json";
-import SuperPal from "./SuperPal";
-import ProfileMatcher from "./ProfileMatcher";
-import EssayMatcher from "./EssayMatcher";
-import ExtracurricularDisplay from "./ExtracurricularDisplay";
-import AwardsDisplay from "./AwardsDisplay";
-import CollegeDatabase from "./CollegeDatabase";
-import YourColleges from "./YourColleges";
 import ImageUploader from "./ImageUploader";
 import ImageMatcher from "./ImageMatcher";
 import ImageGalleryTest from "./ImageGalleryTest";
@@ -77,8 +58,6 @@ const Content = () => {
   // show new chat moadl
   const [showChatModal, setShowChatModal] = useState(false);
 
-  //set the current template for create
-  const [selectedTemplate, setSelectedTemplate] = useState("");
 
   const [showTemplateSelector, setShowTemplateSelector] = useState(false);
 
@@ -224,23 +203,11 @@ const Content = () => {
 
   return (
     <div className="flex flex-row">
-      <CTASubscribeModal
-        open={showCTASubscribed}
-        setShowCTASubscribed={setShowCTASubscribed}
-        setSelectedMode={setSelectedMode}
-      />
+   
 
     
 
-      <InterviewInputModal
-        open={showInterviewModal}
-        setOpen={setShowInterviewModal}
-        interviewThreads={interviewThreads}
-        setInterviewThreads={setInterviewThreads}
-        selectedInterviewThread={selectedInterviewThread}
-        setSelectedInterviewThread={setSelectedInterviewThread}
-        socket={socket}
-      />
+    
 
       <ChatModal
         open={showChatModal}
@@ -285,37 +252,9 @@ const Content = () => {
       />
 
       <div className="flex flex-col w-full">
-        {selectedMode === "chat" &&
-          (threads.length > 0 || showTemplateSelector === true) && (
-            <>
-              <Center
-                threads={threads}
-                setThreads={setThreads}
-                selectedThread={selectedThread}
-                setSelectedThread={setSelectedThread}
-                socket={socket}
-                setShowCTASubscribed={setShowCTASubscribed}
-                freewriteThreads={freewriteThreads}
-                setFreewriteThreads={setFreewriteThreads}
-                setSelectedFreewriteThread={setSelectedFreewriteThread}
-                setSelectedMode={setSelectedMode}
-                selectedTemplate={selectedTemplate}
-                setSelectedTemplate={setSelectedTemplate}
-                showTemplateSelector={showTemplateSelector}
-                setShowTemplateSelector={setShowTemplateSelector}
-              />
-            </>
-          )}
+        
 
-        {selectedMode === "default" && (
-          <LandingPageMain
-            selectedMode={selectedMode}
-            setSelectedMode={setSelectedMode}
-            setShowTemplateSelector={setShowTemplateSelector}
-            setShowInterviewModal={setShowInterviewModal}
-          />
-        )}
-
+   
 {selectedMode === "imageupload" && (
           <ImageUploader
            socket={socket}
@@ -335,153 +274,19 @@ const Content = () => {
         )}
 
 
-        {selectedMode === "chat" &&
-          threads.length === 0 &&
-          showTemplateSelector === false && (
-            <LandingPage
-              selectedMode={selectedMode}
-              setSelectedMode={setSelectedMode}
-              setShowTemplateSelector={setShowTemplateSelector}
-              setShowInterviewModal={setShowInterviewModal}
-            />
-          )}
-
-        {selectedMode === "freewrite" && (
-          <FreeWrite
-            freewriteThreads={freewriteThreads}
-            setFreewriteThreads={setFreewriteThreads}
-            selectedFreewriteThread={selectedFreewriteThread}
-            setSelectedFreewriteThread={setSelectedFreewriteThread}
-            socket={socket}
-            setShowCTASubscribed={setShowCTASubscribed}
-          />
-        )}
-
-     
-
-        {selectedMode === "interview" && interviewThreads.length > 0 && (
-          <Interview
-            interviewThreads={interviewThreads}
-            setInterviewThreads={setInterviewThreads}
-            selectedInterviewThread={selectedInterviewThread}
-            setSelectedInterviewThread={setSelectedInterviewThread}
-            socket={socket}
-            setShowCTASubscribed={setShowCTASubscribed}
-          />
-        )}
-
-        {selectedMode === "interview" && interviewThreads.length === 0 && (
-          <LandingPage2
-            selectedMode={selectedMode}
-            setSelectedMode={setSelectedMode}
-            setShowTemplateSelector={setShowTemplateSelector}
-            setShowInterviewModal={setShowInterviewModal}
-          />
-        )}
-
-        {selectedMode === "settings" && (
-          <Settings
-            subscription={subscription}
-            userID={userID}
-            userInfo={userInfo}
-            setUserInfo={setUserInfo}
-          />
-        )}
-
-        {selectedMode === "resources" && <Resources />}
-
-        {selectedMode === "profile" && 
-        
-        <SuperPal
-          socket={socket}
-          gender = {gender}
-          setGender = {setGender}
-          race = {race}
-          setRace = {setRace}
-          intendedMajor = {intendedMajor}
-          setIntendedMajor = {setIntendedMajor}
-          satScore = {satScore}
-          setSatScore = {setSatScore}
-          actScore = {actScore}
-          setActScore = {setActScore}
-          unweightedGpa = {unweightedGpa}
-          setUnweightedGpa = {setUnweightedGpa}
-          extracurriculars = {extracurriculars}
-          setExtracurriculars = {setExtracurriculars}
-          awards = {awards}
-          setAwards = {setAwards}
-          selectedInterests = {selectedInterests}
-          setSelectedInterests = {setSelectedInterests}
-          change = {change}
-          setChange = {setChange}
-          setSelectedMode = {setSelectedMode}
-         
-        />
-        
-        }
-
-
-        {selectedMode === "studentprofiles" && (
-          <Profile
-            student={student}
-            selectedStudentId={selectedStudentId}
-            setSelectedStudentId={setSelectedStudentId}
-          />
-        )}
-
-        {selectedMode === "profilematcher" && (
-          <ProfileMatcher
-            socket={socket}
-            gender={gender}
-            race={race}
-            intendedMajor={intendedMajor}
-            satScore={satScore}
-            actScore={actScore}
-            unweightedGpa={unweightedGpa}
-            extracurriculars={extracurriculars}
-            awards={awards}
-            selectedInterests={selectedInterests}
-            setSelectedMode={setSelectedMode}
-           
-        />
-          
-        )}
-
-{selectedMode === "essaymatcher" && (
-          <EssayMatcher
-            socket={socket}
-            gender={gender}
-            unweightedGpa={unweightedGpa}
-            extracurriculars={extracurriculars}
-            setSelectedMode={setSelectedMode}
-        />
-          
-        )}
-
-{selectedMode === "ecs" && (
-          <ExtracurricularDisplay
-            
-        />
-          
-        )}
-
-{selectedMode === "awards" && (
-          <AwardsDisplay
-            
-        />
+    
 
         
-          
-        )}
-        {selectedMode === "collegedatabase" && (
-          <CollegeDatabase
-            
-        />)}
+   
 
-{selectedMode === "yourcolleges" && (
-          <YourColleges
-            
-        />)}
+   
+
+
+
+
+
+    
+
       </div>
     </div>
   );

@@ -6,8 +6,7 @@ import Content from "./Content"
 import Cookies from "universal-cookie"
 import * as Sentry from "@sentry/react"
 import { useWindowDimension } from "../hooks/useWindowDimension"
-import MobileNotSupported from "./MobileNotSupported"
-import MobileSchoolMode from "./MobileSchoolMode"
+
 
 const cookies = new Cookies()
 let AUDIENCE = process.env.REACT_APP_AUDIENCE
@@ -66,7 +65,7 @@ const Home = () => {
 		return <Spinner />
 	}
 
-	return <>{showMobileWarning ? <MobileNotSupported /> : <Content />}</>
+	return <>{ <Content />}</>
 }
 
 export default Home
