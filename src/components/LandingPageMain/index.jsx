@@ -12,7 +12,7 @@ const LandingPageMain = ({
     <div style={styles.container}>
       {/* Welcome Section */}
       <div style={styles.header}>
-        <h1 style={styles.title}>Welcome to SUPPAL</h1>
+        <h1 style={styles.title}>Welcome to TerraFind</h1>
         <p style={styles.subtitle}>
           Select an option below:
         </p>

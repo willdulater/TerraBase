@@ -27,7 +27,9 @@ import ExtracurricularDisplay from "./ExtracurricularDisplay";
 import AwardsDisplay from "./AwardsDisplay";
 import CollegeDatabase from "./CollegeDatabase";
 import YourColleges from "./YourColleges";
-
+import ImageUploader from "./ImageUploader";
+import ImageMatcher from "./ImageMatcher";
+import ImageGalleryTest from "./ImageGalleryTest";
 
 const cookies = new Cookies();
 
@@ -313,6 +315,25 @@ const Content = () => {
             setShowInterviewModal={setShowInterviewModal}
           />
         )}
+
+{selectedMode === "imageupload" && (
+          <ImageUploader
+           socket={socket}
+          />
+        )}
+
+{selectedMode === "imagematcher" && (
+          <ImageMatcher
+           socket={socket}
+          />
+        )}
+
+{selectedMode === "test" && (
+          <ImageGalleryTest
+           socket={socket}
+          />
+        )}
+
 
         {selectedMode === "chat" &&
           threads.length === 0 &&

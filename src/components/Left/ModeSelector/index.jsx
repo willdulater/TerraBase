@@ -11,7 +11,7 @@ const ModeSelector = ({ selectedMode, setSelectedMode }) => {
       {/* Logo Section */}
       <div className="flex items-center gap-2 px-3 pb-5">
         <img
-          src="college-base-logo.svg"
+          src="TerraFind.png"
           alt="Logo"
           className="h-8 cursor-pointer"
           onClick={() => handleSelectedMode("profile")}
@@ -19,33 +19,34 @@ const ModeSelector = ({ selectedMode, setSelectedMode }) => {
         
       </div>
 
-      {/* Search & Home Section */}
-      <div className="flex flex-col gap-1">
+
+
+      
+
+
+
+      <SidebarItem
+        icon="magniglass.svg"
+        label="Search"
+        isSelected={selectedMode === "imagematcher"}
+        onClick={() => handleSelectedMode("imagematcher")}
+      />
+
+{/* Search & Home Section */}
+<div className="flex flex-col gap-1">
         <SidebarItem
-          icon="profile-pic.svg"
-          label="Your Profile"
-          isSelected={selectedMode === "profile"}
-          onClick={() => handleSelectedMode("profile")}
+          icon="tulip.svg"
+          label="Growth Analysis"
+          isSelected={selectedMode === "imageupload"}
+          onClick={() => handleSelectedMode("imageupload")}
         />
         
       </div>
-
-      {/* Divider */}
-      <div className="border-t border-gray-600 my-3"></div>
-
-      {/* Private Section */}
-      <h3 className="text-xs font-medium text-gray-500 px-3 py-1 uppercase">Compare</h3>
-      <SidebarItem
-        icon="profilematcher.svg"
-        label="Past Applicants"
-        isSelected={selectedMode === "profilematcher"}
-        onClick={() => handleSelectedMode("profilematcher")}
-      />
-      <SidebarItem
-        icon="essays.svg"
-        label="Past Essays"
-        isSelected={selectedMode === "essaymatcher"}
-        onClick={() => handleSelectedMode("essaymatcher")}
+<SidebarItem
+        icon="leaf.svg"
+        label="Database"
+        isSelected={selectedMode === "test"}
+        onClick={() => handleSelectedMode("test")}
       />
       
 {/*
@@ -118,7 +119,7 @@ const SidebarItem = ({ icon, label, isSelected, onClick }) => {
   return (
     <div
       className={`flex items-center gap-3 px-4 py-2 rounded-md cursor-pointer transition ${
-        isSelected ? "bg-[#0f4d92] text-white" : "hover:bg-[#ECECEC]"
+        isSelected ? "bg-[#1E5631] text-white" : "hover:bg-[#ECECEC]"
       }`}
       onClick={onClick}
     >

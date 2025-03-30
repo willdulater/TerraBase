@@ -610,7 +610,7 @@ const SuperPal = ({
               fontWeight: "600",
             }}
           >
-            Welcome to CollegeBase!
+            Welcome to Terra Find!
           </h2>
           <p style={{ fontSize: "14px", color: "#555", lineHeight: "1.6" }}>
             Find past applicants, essays, and resources based on you.
